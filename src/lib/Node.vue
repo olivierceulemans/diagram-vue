@@ -143,6 +143,15 @@ export default {
     rWidth: Number,
     rHeight: Number
   },
+  emits: [
+    "toggle-select",
+    "commit-dest",
+    "remove",
+    "copy",
+    "select",
+    "update-location",
+    "edit-node"
+  ],
   watch: {
     node() {
       this.x = this.node.point.x;
@@ -164,10 +173,10 @@ export default {
   },
   methods: {
     toggleSelect() {
-      this.$emit("toggleSelect");
+      this.$emit("toggle-select");
     },
     commitDest() {
-      this.$emit("commitDest", this.id);
+      this.$emit("commit-dest", this.id);
     },
     remove() {
       this.$emit("remove", this.id);
@@ -196,7 +205,7 @@ export default {
         this.y =
           this.startPosition.y +
           (y - this.cursorOffset.y) / this.rHeight / parseFloat(this.scale);
-        this.$emit("updateLocation", {
+        this.$emit("update-location", {
           id: this.id,
           x: this.x,
           y: this.y
@@ -210,7 +219,7 @@ export default {
       document.removeEventListener("mouseup", this.mouseup);
     },
     editCandidate() {
-      this.$emit("editNode", {
+      this.$emit("edit-node", {
         id: this.id,
         shape: this.node.shape,
         width: this.node.width,

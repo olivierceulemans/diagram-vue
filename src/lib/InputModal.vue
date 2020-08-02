@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <VModal :isActive="isActive" @click-modal="cancel">
     <div>
       <textarea
         class="input"
@@ -19,6 +19,7 @@ export default {
     isActive: Boolean,
     text: String
   },
+  emits: ["ok", "cancel"],
   watch: {
     text(val) {
       this.tmp = val;

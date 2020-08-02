@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <h2>diagram-vue</h2>
     <section>
       <span>Demo:</span>
@@ -9,10 +9,12 @@
       </VSelect>
     </section>
     <br />
+    {{ demo }}
+    <br />
     <section v-if="demo === 'default'">
       <DiagramEditor v-model="graph"></DiagramEditor>
     </section>
-    <section v-if="demo === 'calculator'"><Calculator /></section>
+    <section v-if="demo === 'calculator'"><Calculator></Calculator></section>
   </div>
 </template>
 

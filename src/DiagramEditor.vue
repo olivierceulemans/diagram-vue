@@ -62,10 +62,10 @@
           copy: 'Copy'
         }
       "
-      @editNode="openNodeEdit"
-      @editLink="openLinkEdit"
-      @nodeChanged="nodeChanged"
-      @linkChanged="linkChanged"
+      @edit-node="openNodeEdit"
+      @edit-link="openLinkEdit"
+      @node-changed="nodeChanged"
+      @link-changed="linkChanged"
     >
     </Diagram>
   </div>
@@ -89,7 +89,7 @@ export default {
     SettingsModal
   },
   props: {
-    value: {
+    modelValue: {
       type: Object,
       default: () => {
         return {
@@ -113,10 +113,10 @@ export default {
   computed: {
     graphData: {
       get() {
-        return this.value;
+        return this.modelValue;
       },
       set(val) {
-        this.$emit("input", val);
+        this.$emit("update:modelValue", val);
       }
     }
   },

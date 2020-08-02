@@ -1,6 +1,10 @@
 # diagram-vue
 A SVG-based diagram component for Vue
 
+This is a fork that I use that differs from the original in the following ways:
+- (done) ported to vuejs version 3.beta.1
+- (wip) ported to typescript
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a66f2b18a900451693f7a41019abf79e)](https://app.codacy.com/app/pb10001/diagram-vue?utm_source=github.com&utm_medium=referral&utm_content=pb10001/diagram-vue&utm_campaign=Badge_Grade_Dashboard)
 [![npm version](https://badge.fury.io/js/diagram-vue.svg)](https://badge.fury.io/js/diagram-vue)
 ![npm](https://img.shields.io/npm/dt/diagram-vue.svg)
@@ -50,10 +54,10 @@ import "diagram-vue/dist/diagram.css";
         select: 'Select',
         cancel: 'Cancel'
     }"
-    @editNode="editNode"
-    @editLink="editLink"
-    @nodeChanged="nodeChanged"
-    @linkChanged="linkChanged"
+    @edit-node="editNode"
+    @edit-link="editLink"
+    @node-changed="nodeChanged"
+    @link-changed="linkChanged"
     >
 </Diagram>
 ```

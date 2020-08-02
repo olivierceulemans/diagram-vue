@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <VModal :isActive="isActive" @click-modal="cancel">
     <transition name="item">
       <div class="block">
         <div class="inner-block"><slot></slot></div>
@@ -14,6 +14,7 @@ export default {
   props: {
     isActive: Boolean
   },
+  emits: ["ok", "cancel"],
   methods: {
     ok() {
       this.$emit("ok", true);

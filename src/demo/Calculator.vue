@@ -28,10 +28,10 @@
         cancel: 'Cancel',
         copy: '_'
       }"
-      @editNode="onEditNode"
-      @editLink="onEditLink"
-      @nodeChanged="nodeChanged"
-      @linkChanged="linkChanged"
+      @edit-node="onEditNode"
+      @edit-link="onEditLink"
+      @node-changed="nodeChanged"
+      @link-changed="linkChanged"
     >
     </Diagram>
   </section>
@@ -90,7 +90,7 @@ export default {
         height: 50,
         shape: "rectangle",
         content: {
-        color: "#F00",
+          color: "#F00",
           text: "result"
         },
         point: {

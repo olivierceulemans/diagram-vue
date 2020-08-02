@@ -1,5 +1,5 @@
 <template>
-  <select v-model="val" :multiple="multiple" @change="onChange">
+  <select :value="modelValue" :multiple="multiple" @change="onChange($event)">
     <option class="placeholder" :value="null" disabled>
       {{ placeholder }}
     </option>
@@ -10,7 +10,7 @@
 export default {
   name: "VSelect",
   props: {
-    value: {
+    modelValue: {
       type: [String, Number, Boolean, Object],
       default: null
     },
@@ -23,22 +23,9 @@ export default {
       default: ""
     }
   },
-  mounted() {
-    this.val = this.value;
-  },
-  computed: {
-    val: {
-      get() {
-        return this.value;
-      },
-      set(value) {
-        this.$emit("input", value);
-      }
-    }
-  },
   methods: {
-    onChange() {
-      if (this.value !== this.val) this.$emit("input", this.val);
+    onChange(event) {
+      this.$emit("update:modelValue", event.target.value);
     }
   }
 };

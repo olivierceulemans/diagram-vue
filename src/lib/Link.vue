@@ -149,6 +149,7 @@ export default {
     rWidth: Number,
     rHeight: Number
   },
+  emits: ["update-location", "edit-link", "select", "remove"],
   computed: {},
   data() {
     return {
@@ -180,7 +181,7 @@ export default {
         this.point.y =
           this.startPosition.y +
           (y - this.cursorOffset.y) / this.rHeight / parseFloat(this.scale);
-        this.$emit("updateLocation", {
+        this.$emit("update-location", {
           id: this.id,
           x: this.point.x,
           y: this.point.y
@@ -210,7 +211,7 @@ export default {
       this.$emit("select", this.id);
     },
     edit() {
-      this.$emit("editLink", {
+      this.$emit("edit-link", {
         id: this.link.id,
         content: {
           color: this.link.color || "#ffeaa7",

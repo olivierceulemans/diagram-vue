@@ -14,9 +14,10 @@ export default {
   props: {
     isActive: Boolean
   },
+  emits: ["click-modal"],
   methods: {
     clickModal() {
-      this.$emit("clickModal");
+      this.$emit("click-modal");
     }
   }
 };

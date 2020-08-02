@@ -55,12 +55,12 @@
           :rWidth="rect().rWidth"
           :rHeight="rect().rHeight"
           :scale="scale"
-          @editNode="editNode"
+          @edit-node="editNode"
           @select="selectNode"
           @copy="copyNode"
-          @updateLocation="updateNodeLocation"
-          @toggleSelect="toggleSrcSelect"
-          @commitDest="commitDest"
+          @update-location="updateNodeLocation"
+          @toggle-select="toggleSrcSelect"
+          @commit-dest="commitDest"
           @remove="removeNode"
         />
         <Link
@@ -75,9 +75,9 @@
           :rWidth="rect().rWidth"
           :rHeight="rect().rHeight"
           :scale="scale"
-          @editLink="editLink"
+          @edit-link="editLink"
           @select="selectLink"
-          @updateLocation="updateLinkLocation"
+          @update-location="updateLinkLocation"
           @remove="removeLink"
         />
       </g>
@@ -107,6 +107,7 @@ export default {
       default: false
     }
   },
+  emits: ["edit-node", "edit-link", "node-changed", "link-changed"],
   components: {
     Node,
     Link
@@ -134,7 +135,7 @@ export default {
         return this.nodes;
       },
       set(val) {
-        this.$emit("nodeChanged", {
+        this.$emit("node-changed", {
           nodes: val
         });
       }
@@ -144,7 +145,7 @@ export default {
         return this.links;
       },
       set(val) {
-        this.$emit("linkChanged", {
+        this.$emit("link-changed", {
           links: val
         });
       }
@@ -162,10 +163,10 @@ export default {
   },
   methods: {
     editNode(item) {
-      this.$emit("editNode", item);
+      this.$emit("edit-node", item);
     },
     editLink(item) {
-      this.$emit("editLink", item);
+      this.$emit("edit-link", item);
     },
     generateID() {
       return (

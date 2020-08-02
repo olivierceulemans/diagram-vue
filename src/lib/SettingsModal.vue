@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <VModal :isActive="isActive" @click-modal="cancel">
     <h2>Settings</h2>
     <h3>Field Size</h3>
     <label>Width</label>
@@ -40,6 +40,7 @@ export default {
       }
     }
   },
+  emits: ["ok", "cancel", "change-grid"],
   watch: {
     isActive(val) {
       if (val) {
@@ -58,7 +59,7 @@ export default {
   },
   methods: {
     changeGrid() {
-      this.$emit("changeGrid");
+      this.$emit("change-grid");
     },
     ok() {
       this.$emit("ok", this.newSettings);

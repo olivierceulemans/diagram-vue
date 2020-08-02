@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <VModal :isActive="isActive" @click-modal="cancel">
     <transition name="item">
       <div class="form" v-if="isActive">
         <VInput v-model="newNode.content.text" placeholder="name" /><br />
@@ -58,6 +58,7 @@ export default {
       }
     }
   },
+  emits: ["ok", "cancel"],
   watch: {
     node() {
       this.newWidth = parseInt(this.node.width);

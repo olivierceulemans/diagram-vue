@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <VModal :isActive="isActive" @click-modal="cancel">
     <transition name="item">
       <div class="form" v-if="isActive">
         <h2>Edit link</h2>
@@ -48,6 +48,7 @@ export default {
       }
     }
   },
+  emits: ["ok", "cancel"],
   computed: {
     newLink: {
       get() {
