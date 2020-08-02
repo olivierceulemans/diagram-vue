@@ -6,8 +6,10 @@
     <slot></slot>
   </select>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VSelect",
   props: {
     modelValue: {
@@ -28,7 +30,7 @@ export default {
       this.$emit("update:modelValue", event.target.value);
     }
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 select {

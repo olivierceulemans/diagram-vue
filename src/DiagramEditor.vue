@@ -71,14 +71,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
+
 import Diagram from "./Diagram";
 import EditNodeModal from "@/lib/EditNodeModal";
 import EditLinkModal from "@/lib/EditLinkModal";
 import InputModal from "@/lib/InputModal";
 import AskModal from "@/lib/AskModal";
 import SettingsModal from "@/lib/SettingsModal";
-export default {
+
+export default defineComponent({
   name: "DiagramEditor",
   components: {
     Diagram,
@@ -292,5 +295,5 @@ export default {
       this.isSettingsModalActive = false;
     }
   }
-};
+});
 </script>

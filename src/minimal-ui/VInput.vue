@@ -1,8 +1,10 @@
 <template>
   <input :type="type" v-model="val" @input="onInput" />
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VInput",
   props: {
     type: String,
@@ -23,7 +25,7 @@ export default {
       if (this.value !== this.val) this.$emit("input", this.val);
     }
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 input {

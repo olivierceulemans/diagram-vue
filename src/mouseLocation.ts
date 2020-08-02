@@ -1,6 +1,6 @@
 export default {
   methods: {
-    getLocation(e) {
+    getLocation(e: any) {
       /* マウスカーソルの位置またはタッチ位置を返す */
       let x = 0;
       let y = 0;

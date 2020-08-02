@@ -8,8 +8,10 @@
     <div class="item" :class="{ 'is-open': isActive }"><slot></slot></div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VModal",
   props: {
     isActive: Boolean
@@ -20,7 +22,7 @@ export default {
       this.$emit("click-modal");
     }
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

@@ -104,9 +104,11 @@
     </g>
   </g>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import mouseLocation from "../mouseLocation";
-export default {
+
+export default defineComponent({
   mixins: [mouseLocation],
   props: {
     selected: Boolean,
@@ -288,6 +290,6 @@ export default {
       }
     }
   }
-};
+});
 </script>
 <style scoped></style>

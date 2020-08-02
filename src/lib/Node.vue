@@ -107,9 +107,11 @@
     </a>
   </g>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import mouseLocation from "../mouseLocation";
-export default {
+
+export default defineComponent({
   mixins: [mouseLocation],
   props: {
     node: {
@@ -230,7 +232,7 @@ export default {
       });
     }
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 .shadow {

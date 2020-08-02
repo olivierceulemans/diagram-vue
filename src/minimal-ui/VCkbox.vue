@@ -11,8 +11,10 @@
   </span>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VCkbox",
   props: {
     value: Boolean
@@ -39,7 +41,7 @@ export default {
       }
     }
   }
-};
+});
 </script>
 
 <style lang="scss" scoped>

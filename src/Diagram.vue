@@ -84,10 +84,12 @@
     </svg>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import Node from "@/lib/Node";
 import Link from "@/lib/Link";
-export default {
+
+export default defineComponent({
   name: "Diagram",
   props: {
     width: Number,
@@ -279,7 +281,7 @@ export default {
       });
     }
   }
-};
+});
 </script>
 <style>
 .button {

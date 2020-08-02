@@ -29,8 +29,10 @@
     </transition>
   </VModal>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   props: {
     isActive: Boolean,
     link: {
@@ -72,7 +74,7 @@ export default {
       this.$emit("cancel");
     }
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 input {

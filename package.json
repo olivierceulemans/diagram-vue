@@ -4,12 +4,12 @@
   "private": false,
   "author": "pb10005",
   "scripts": {
-    "serve": "vue-cli-service serve src/demo/main.js",
-    "build": "vue-cli-service build src/index.js --target lib --name diagram",
+    "serve": "vue-cli-service serve src/demo/main.ts",
+    "build": "vue-cli-service build src/index.ts --target lib --name diagram",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "build_app": "vue-cli-service build src/demo/main.js"
+    "build_app": "vue-cli-service build src/demo/main.ts"
   },
   "main": "dist/diagram.umd.js",
   "browser": {
@@ -21,13 +21,19 @@
     "vue": "^3.0.0-beta.1"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.4",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-nightwatch": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.4.0",
     "@vue/cli-plugin-unit-mocha": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0-beta.1",
     "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^5.0.2",
     "@vue/test-utils": "^2.0.0-alpha.1",
     "babel-eslint": "^10.1.0",
     "chai": "^4.1.2",
@@ -36,7 +42,8 @@
     "eslint-plugin-vue": "^7.0.0-alpha.0",
     "node-sass": "^4.14.1",
     "prettier": "^1.19.1",
-    "sass-loader": "^9.0.2"
+    "sass-loader": "^9.0.2",
+    "typescript": "~3.9.3"
   },
   "keywords": [
     "vue",

@@ -4,8 +4,10 @@
     <div id="content">{{ content }}</div>
   </div>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VMessage",
   props: {
     content: String
@@ -15,7 +17,7 @@ export default {
       dismiss: false
     };
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 #message {

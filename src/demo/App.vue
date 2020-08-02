@@ -9,8 +9,6 @@
       </VSelect>
     </section>
     <br />
-    {{ demo }}
-    <br />
     <section v-if="demo === 'default'">
       <DiagramEditor v-model="graph"></DiagramEditor>
     </section>
@@ -20,7 +18,7 @@
 
 <script>
 import data from "./data.json";
-import { DiagramEditor } from "../index.js";
+import { DiagramEditor } from "../index";
 import Calculator from "./Calculator";
 export default {
   name: "app",

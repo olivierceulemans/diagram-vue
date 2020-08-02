@@ -1,15 +1,17 @@
 <template>
   <button @click="onClick"><slot /></button>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "VButton",
   methods: {
     onClick() {
       this.$emit("click");
     }
   }
-};
+});
 </script>
 <style lang="scss" scoped>
 button {

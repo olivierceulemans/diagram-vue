@@ -37,7 +37,8 @@
   </section>
 </template>
 <script>
-import Diagram from "../index.js";
+import Diagram from "../index";
+
 export default {
   components: {
     Diagram
